@@ -280,10 +280,11 @@ def stats2inv(stats,prepro_para,locs=None):
     ------------------------
     inv: obspy inventory object of all station info to be used later
     '''
+    print(prepro_para, "prepro_para")
     staxml    = prepro_para['stationxml']
     respdir   = prepro_para['respdir']
     input_fmt = prepro_para['input_fmt']
-
+    
     if staxml:
         if not respdir:
             raise ValueError('Abort! staxml is selected but no directory is given to access the files')
@@ -294,8 +295,9 @@ def stats2inv(stats,prepro_para,locs=None):
                 return inv
 
     inv = Inventory(networks=[],source="homegrown")
-
-    if input_fmt=='sac':
+   
+    if input_fmt=='SAC'or input_fmt == 'sac':
+        
         net = Network(
             # This is the network code according to the SEED standard.
             code=stats.network,
