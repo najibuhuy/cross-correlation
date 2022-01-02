@@ -280,7 +280,6 @@ def stats2inv(stats,prepro_para,locs=None):
     ------------------------
     inv: obspy inventory object of all station info to be used later
     '''
-    print(prepro_para, "prepro_para")
     staxml    = prepro_para['stationxml']
     respdir   = prepro_para['respdir']
     input_fmt = prepro_para['input_fmt']
